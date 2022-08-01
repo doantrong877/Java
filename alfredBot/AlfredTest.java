@@ -8,7 +8,7 @@ public class AlfredTest {
         // Make an instance of AlfredQuotes to access all its methods.
         AlfredQuotes alfredBot = new AlfredQuotes();
         
-        // Make some test greetings, providing any necessary data
+        //a Make some test greetings, providing any necessary data
         String testGreeting = alfredBot.basicGreeting();
         String testGuestGreeting = alfredBot.guestGreeting("Beth Kane");
         String testDateAnnouncement = alfredBot.dateAnnouncement();
