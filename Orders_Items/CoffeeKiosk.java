@@ -17,8 +17,8 @@ public class CoffeeKiosk{
 
     public void displayMenu(){
         for( int i = 0; i < this.menu.size(); i++){
-            System.out.println(item.getIndex() + " " + item.getName + " -- " + "$" + item.getPrice() );
-        }
+            System.out.println(this.menu.get(i).getIndex() + " " + this.menu.get(i).getName() + " -- " + "$" + this.menu.get(i).getPrice());
+        };
     }
         public void newOrder() {
         
@@ -46,8 +46,11 @@ public class CoffeeKiosk{
             } else{
                 System.out.println("There is no such index");
             }
+             or.display();
              System.out.println("Please enter a menu item index or q to quit:");
              itemNumber = System.console().readLine();
+           
+             
             // Get the item object from the menu, and add the item to the order
             // Ask them to enter a new item index or q again, and take their input
         }
