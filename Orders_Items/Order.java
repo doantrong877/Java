@@ -27,7 +27,7 @@ public class Order {
     
     	// Most of your code will go here, 
     	// so implement the getters and setters first!
-    public void additem(Item item){
+    public void addItem(Item item){
         this.items.add(item);
     }
 
@@ -62,6 +62,9 @@ public class Order {
     public ArrayList<Item> getItems(){
         return this.items;
     }
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+  }
     public void setName(String name){
         this.name = name;
     }
