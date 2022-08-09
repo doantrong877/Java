@@ -5,19 +5,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 
-@RequestMapping("/daikichi")
+
 
 public class DaikichiController {
-	@RequestMapping("")
+	@RequestMapping("/omikuji")
 	public String welcome() {
-		return "Welcome!";
+		return "omikuji.jsp";
 	}
-	@RequestMapping("/today")
-	public String today() {
-		return "Today you will find luck in all your endeavors!";
+	@RequestMapping("/read")
+	public String read() {
+		return "redeirect:/show";
 	}
-	@RequestMapping("/tomorrow")
-	public String tomorrow() {
-		return "Tomorrow, an opportunity will arise, so be sure to be open to new ideas!";
+	@RequestMapping("/show")
+	public String show() {
+		return "show.jsp";
 	}
 }

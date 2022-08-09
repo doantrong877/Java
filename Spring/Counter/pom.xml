@@ -8,12 +8,12 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.trong.Daikichi</groupId>
-	<artifactId>DaikichiRoutes</artifactId>
+	<groupId>com.trong.jsp</groupId>
+	<artifactId>Counter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>DaikichiRoutes</name>
-	<description>Daikichi</description>
+	<name>Counter</name>
+	<description>p assignment</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -47,6 +47,7 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
+		
 	</dependencies>
 
 	<build>
