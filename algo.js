@@ -417,7 +417,13 @@ class BinarySearchTree {
    * @param {Node} node The current node during the traversal of this tree.
    * @returns {number} The total number of nodes.
    */
-  size(node = this.root) {}
+  size(node = this.root) {
+    if(!node){
+      return 0;
+    }
+      return 1 + this.size(node.left) + this.size(node.right);
+     
+  }
 
   /**
    * Calculates the height of the tree which is based on how many nodes from
@@ -427,7 +433,15 @@ class BinarySearchTree {
    * @param {Node} node The current node during traversal of this tree.
    * @returns {number} The height of the tree.
    */
-  height(node = this.root) {}
+  height(node = this.root) {
+    if(!node) {
+      return 0;
+  } else {
+      let left = 1+this.height(node.left);
+      let right = 1+this.height(node.right);
+      return left > right ? left : right;
+  }
+  }
 
   /**
    * Determines if this tree is a full tree. A full tree is a tree where every
@@ -437,7 +451,18 @@ class BinarySearchTree {
    * @param {Node} node The current node during traversal of this tree.
    * @returns {boolean} Indicates if this tree is full.
    */
-  isFull(node = this.root) {}
+  isFull(node = this.root) {
+    console.log(node.left)
+        if(node.left === null && node.right != null){
+            return false;
+        } else if (node.left != null && node.right === null){
+            return false;
+        } else {
+            this.isFull(node.left)
+            this.isFull(node.right)
+        }
+        return true;
+  }
 }
 
 const emptyTree = new BinarySearchTree();
@@ -454,7 +479,7 @@ const twoLevelTree = new BinarySearchTree();
 twoLevelTree.root = new BSTNode(10);
 twoLevelTree.root.left = new BSTNode(5);
 twoLevelTree.root.right = new BSTNode(15);
-
+console.log(twoLevelTree.isFull());
 /* threeLevelTree 
         root
         10
