@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.box{
+	display:flex;
+	justify-content: space-between;
+	margin: 5% 0;
+}
+.form-div{
+	padding: 0 50% 0 20%;
+}
+input{
+	width: 50%;
+}
+textarea{
+	width:50%;
+}

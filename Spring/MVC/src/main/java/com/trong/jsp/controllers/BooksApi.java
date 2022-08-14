@@ -33,8 +33,8 @@ public class BooksApi {
 	    
 	    @RequestMapping("/api/books/{id}")
 	    public Book show(@PathVariable("id") Long id) {
-	        Book book = bookService.findBook(id);
-	        return book;
+	        Book books = bookService.findBook(id);
+	        return books;
 	    }
 	    @RequestMapping(value="/api/books/{id}", method=RequestMethod.PUT)
         public Book update(
@@ -50,5 +50,6 @@ public class BooksApi {
         @RequestMapping(value="/api/books/{id}", method=RequestMethod.DELETE)
         public void destroy(@PathVariable("id") Long id) {
             bookService.deleteBook(id);
+            
         }
 }
