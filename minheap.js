@@ -28,7 +28,11 @@
      * - Space: O(1) constant.
      * @returns {?number} Null if empty.
      */
-    top() {}
+    top() {
+        if(this.heap[1]){
+            return this.heap[1];
+        }
+    }
   
     /**
      * Inserts a new number into the heap and maintains the heaps order.
@@ -39,7 +43,17 @@
      * - Space: O(1) constant.
      * @param {number} num The num to add.
      */
-    insert(num) {}
+    insert(num) {
+        this.heap.push(num);
+        let currIndex = this.heap.length -1;
+        while(this.heap[currIndex] < this.heap[Math.floor(currIndex/2)]){
+            let tempIndex = Math.floor(currIndex/2);
+            let tempValue = this.heap[Math.floor(currIndex/2)];
+            this.heap[tempIndex] = this.heap[currIndex];
+            this.heap[currIndex] = tempValue;
+            currIndex = tempIndex;
+        }
+    }
   
     /**
      * Logs the tree horizontally with the root on the left and the index in
@@ -60,5 +74,14 @@
   
       this.printHorizontalTree(parentIdx * 2, spaceCnt);
     }
+
+    
   }
-  
+  let heap = new MinHeap();
+
+  heap.insert(5);
+  heap.insert(6);
+  heap.insert(3);
+
+  console.log(heap);
+ 
