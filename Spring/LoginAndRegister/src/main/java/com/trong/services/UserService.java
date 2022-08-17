@@ -30,11 +30,27 @@ public class UserService {
         
         String hash_brows = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
         newUser.setPassword(hash_brows);
-        return null;
+        return userRepo.save(newUser);
     }
     public User login(LoginUser newLoginObject, BindingResult result) {
         // TO-DO: Additional validations!
-        return null;
+    	if(result.hasErrors()) {
+    		return null;
+    	}
+    	
+    	Optional<User> user =userRepo.findByEmail(newLoginObject.getEmail());
+    	if(!user.isPresent()) {
+    		result.rejectValue("email", "Unique", "Invalid Credentials");
+    		return null;
+    	} 
+    	
+    	User user1 = user.get();
+    	
+    	if(!BCrypt.checkpw(newLoginObject.getPassword(), user1.getPassword())) {
+    		result.rejectValue("password", "Matches", "Invalid Credentials");
+    		return null;
+    	}
+        return user1;
     }
     
     public User getOne(Long id) {
