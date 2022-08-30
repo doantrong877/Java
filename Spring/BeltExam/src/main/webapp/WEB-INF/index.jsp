@@ -11,29 +11,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Project Manager</title>
 <style>
-form{
-display: flex;
-flex-direction:column;
-}
+.title{
+text-align:center;
+margin-bottom:5%;}
 .container{
 display: flex;
-justify-content: space-evenly;
+justify-content: space-between;
 }
+.login{
+margin-left:5%}
+
+
+input{
+margin-bottom:5px}
+
+button{
+margin-top:5px}
 </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>Welcome!</h1>
-	<p>Join our growing community</p>
+	<h1 class="title">Course Platform - Instructors</h1>
 	
 	<div class="container">
 	<div class="register">
-	<h1>Register</h1>
-	<form:form action="/register" method="post" modelAttribute="newUser">
-		<form:label path="userName">User Name: </form:label>
-		<form:input path="userName"/>
-		<form:errors path="userName"/>
+	<h1>New Instructor</h1>
+	<form:form class="form-control row" action="/register" method="post" modelAttribute="newUser">
+		<form:label path="name">Name:</form:label>
+		<form:input path="name"/>
+		<form:errors path="name"/>
 		
 		<form:label path="email">Email: </form:label>
 		<form:input  path="email"/>
@@ -48,13 +57,13 @@ justify-content: space-evenly;
 		<form:input  type="password" path="confirm"/>
 		<form:errors path="confirm"/>
 		
-		<button type="submit">Submit</button>
+		<button type="submit" class="btn btn-dark">Register</button>
 		</form:form>
 		</div>
 		
 		<div class="login">
 	<h1>Login</h1>
-	<form:form action="/login" method="post" modelAttribute="newLogin">
+	<form:form class="form-control row"  action="/login" method="post" modelAttribute="newLogin">
 		
 		<form:label path="email">Email: </form:label>
 		<form:input path="email"/>
@@ -66,7 +75,7 @@ justify-content: space-evenly;
 		<form:errors path="password"/>
 		
 
-		<button type="submit">Submit</button>
+		<button type="submit" class="btn btn-dark">Submit</button>
 		</form:form>
 		</div>
 	</div>

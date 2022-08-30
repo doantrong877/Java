@@ -77,5 +77,12 @@ public class HomeController {
     	session.removeAttribute("userId");
     	return "redirect:/";
     }
+    @GetMapping("/home")
+    public String home(Model model,HttpSession session) {
+    	User user = userServ.getOne((long) session.getAttribute("userId"));
+    	model.addAttribute("user", user);
+    	return "home.jsp";
+    	
+    }
     
 }

@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Read Share</title>
 <style>
 form{
 display: flex;
@@ -31,9 +31,9 @@ justify-content: space-evenly;
 	<div class="register">
 	<h1>Register</h1>
 	<form:form action="/register" method="post" modelAttribute="newUser">
-		<form:label path="userName">User Name: </form:label>
-		<form:input path="userName"/>
-		<form:errors path="userName"/>
+		<form:label path="name">Name:</form:label>
+		<form:input path="name"/>
+		<form:errors path="name"/>
 		
 		<form:label path="email">Email: </form:label>
 		<form:input  path="email"/>
